@@ -23,13 +23,29 @@ public class Main {
             0,
             2026
         );
+       EligibilityChecker checker = new EligibilityChecker();
 
-        System.out.println("Candidate: " + candidate.getName());
-        System.out.println("Company: " + job.getCompany());
-        System.out.println("Role: " + job.getRole());
-        System.out.println("Minimum Percentage: " + job.getMinimumPercentage());
-        System.out.println("Maximum Backlogs: " + job.getMaximumBacklogs());
-        System.out.println("Required Graduation Year: " + job.getRequiredGraduationYear());
+        System.out.println("================================");
+        System.out.println("PLACEMENT ELIGIBILITY RESULT");
+        System.out.println("================================");
+
+        System.out.println();
+        System.out.println("Candidate : " + candidate.getName());
+        System.out.println("Company   : " + job.getCompany());
+        System.out.println("Role      : " + job.getRole());
+        System.out.println();
+
+        boolean eligible = checker.evaluate(candidate, job);
+
+        System.out.println();
+
+        if (eligible) {
+            System.out.println("Final Result : ELIGIBLE");
+        } else {
+            System.out.println("Final Result : NOT ELIGIBLE");
+        }
+
+        System.out.println("================================");
 
         scanner.close();
     }
