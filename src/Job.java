@@ -46,5 +46,3 @@ public class Job {
         return requiredSkills;
     }
 }
-    
-
